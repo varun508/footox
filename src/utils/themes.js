@@ -22,7 +22,7 @@ export const darkTheme = {
 
 export const GlobalStyle = createGlobalStyle`
   html, body {
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     padding: 0;
     margin: 0;
   }
@@ -40,28 +40,28 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 3.5rem;
         font-weight: 700;
         color: ${({ secondary, theme }) =>
-            secondary ? theme.colorSecondary[500] : theme.textPrimary[500]};
+        secondary ? theme.colorSecondary[500] : theme.textPrimary[500]};
     }
 
     h2 {
         font-size: 1.5rem;
         font-weight: 600;
         color: ${({ secondary, theme }) =>
-            secondary ? theme.textSecondary[500] : theme.textPrimary[500]};
+        secondary ? theme.textSecondary[500] : theme.textPrimary[500]};
     }
 
     h3 {
         font-size: 1.3rem;
         font-weight: 500;
         color: ${({ secondary, theme }) =>
-            secondary ? theme.textSecondary[500] : theme.textPrimary[500]};
+        secondary ? theme.textSecondary[500] : theme.textPrimary[500]};
     }
 
     p {
         font-size: 1rem;
         font-weight: 400;
         color: ${({ secondary, theme }) =>
-            secondary ? theme.textSecondary[500] : theme.textPrimary[500]};
+        secondary ? theme.textSecondary[500] : theme.textPrimary[500]};
     }
 
 `;

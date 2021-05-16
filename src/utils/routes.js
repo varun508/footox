@@ -1,19 +1,25 @@
 export const appRoutes = [
     {
-        path: "/",
-        title: "Home",
-        name: "home"
+        path: "/men",
+        title: "Men",
+        name: "men"
+    },
+    {
+        path: "/women",
+        title: "Women",
+        name: "women"
+    },
+    {
+        path: "/kids",
+        title: "Kids",
+        name: "kids"
     }, {
-        path: "/about_us",
+        path: "/about-us",
         title: "About Us",
-        name: "about us"
+        name: "about-us"
     }, {
-        path: "/contact_us",
+        path: "/contact-us",
         title: "Contact Us",
-        name: "contact us"
-    }, {
-        path: "/blogs",
-        title: "Blogs",
-        name: "blogs"
+        name: "contact-us"
     },
 ]

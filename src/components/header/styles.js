@@ -4,12 +4,19 @@ const HeaderStyles = {};
 
 HeaderStyles.Wrapper = styled.div`
     height: 100px;
-    padding: 1rem 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1500px;
-    margin: 0 auto;
+    background-color: ${({ theme }) => theme.background[500]};
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+`;
+
+HeaderStyles.Container = styled.div`
+       width: 1500px;
+       margin:0 auto;
+       display:flex;
+       justify-content:space-between;
+       align-items:center;
 `;
 
 HeaderStyles.LogoContainer = styled.div`
