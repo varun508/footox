@@ -5,7 +5,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { createHttpLink } from 'apollo-link-http';
 
 const httpLink = createHttpLink({
-    uri: 'http://localhost:5000'
+    uri: 'https://api-eu-central-1.graphcms.com/v2/ckoriclm9u0bf01xn4a33f2zi/master'
 });
 
 const client = new ApolloClient({
