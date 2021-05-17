@@ -7,7 +7,6 @@ function HomeContainer() {
     return (
         <HomeContainerStyles.Wrapper>
             <Carousel />
-            <Carousel />
             <HomeContainerStyles.Container></HomeContainerStyles.Container>
         </HomeContainerStyles.Wrapper>
     );
