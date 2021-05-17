@@ -1,13 +1,13 @@
 import React from 'react';
 
 import HomeContainerStyles from './styles';
-import { Carousel } from '../../components';
+import { Carousel, CategoryCards } from '../../components';
 
 function HomeContainer() {
     return (
         <HomeContainerStyles.Wrapper>
             <Carousel />
-            <Carousel />
+            <CategoryCards />
             <HomeContainerStyles.Container></HomeContainerStyles.Container>
         </HomeContainerStyles.Wrapper>
     );
