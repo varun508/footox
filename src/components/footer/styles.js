@@ -4,6 +4,8 @@ const FooterStyles = {};
 
 FooterStyles.Wrapper = styled.div`
 padding:1rem;
+height:100px;
+background-color:red;
 `
 
 FooterStyles.Container = styled.div`

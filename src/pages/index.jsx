@@ -1,5 +1,7 @@
 import { HomeContainer } from '../containers';
 
-export default function Home() {
+function Home() {
     return <HomeContainer />;
 }
+
+export default Home;

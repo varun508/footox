@@ -4,6 +4,10 @@ const HeaderStyles = {};
 
 HeaderStyles.Wrapper = styled.div`
     height: 100px;
+    position:fixed;
+    top:0;
+    z-index:10;
+    width:100%;
     display: flex;
     justify-content: space-between;
     align-items: center;

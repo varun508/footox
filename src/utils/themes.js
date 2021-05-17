@@ -63,5 +63,24 @@ export const GlobalStyle = createGlobalStyle`
         color: ${({ secondary, theme }) =>
         secondary ? theme.textSecondary[500] : theme.textPrimary[500]};
     }
+     &::-webkit-scrollbar {
+    width: 12px;
+    background: #fff;
+  }
 
+  ::-webkit-scrollbar-track {
+    background: rgba($color: #000000, $alpha: 0.9);
+    border-left: 8px solid white;
+    border-right: 8px solid white;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #a9afbc;
+    border-radius: 10px;
+    border: 4px solid white;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #999;
+  }
 `;

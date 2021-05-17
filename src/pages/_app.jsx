@@ -8,7 +8,9 @@ function MyApp({ Component, pageProps }) {
         <ThemeProvider theme={darkTheme}>
             <GlobalStyle />
             <Header />
-            <Component {...pageProps} />
+            <div style={{ paddingTop: '100px' }}>
+                <Component {...pageProps} />
+            </div>
             <Footer />
         </ThemeProvider>
     );
