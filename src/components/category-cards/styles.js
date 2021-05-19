@@ -14,11 +14,6 @@ const CategoryCard = {
     Card: styled.div`
         width: 100%;
 
-        /* background: url(${({ img }) => img});
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain; */
-
         display: flex;
         justify-content: center;
         align-items: center;
