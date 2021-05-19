@@ -8,14 +8,12 @@ HeaderStyles.Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: ${({ theme }) => theme.background[500]};
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 0px 2px 1px #000000;
 
     @media (max-width: 1024px) {
         height: 80px;
-    }
-
-    @media (max-width: 768px) {
     }
 
     @media (max-width: 600px) {
@@ -24,7 +22,8 @@ HeaderStyles.Wrapper = styled.div`
 `;
 
 HeaderStyles.Container = styled.div`
-    width: 1500px;
+    width: 100%;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
@@ -76,7 +75,7 @@ HeaderStyles.NavListItems = styled.li`
 `;
 
 HeaderStyles.NavPointer = styled.div`
-    background-color: ${({ theme }) => theme.colorSecondary[500]};
+    background-color: ${({ theme }) => theme.colorPrimary[500]};
     padding: 4px;
     border-radius: 50%;
     margin-top: 3px;

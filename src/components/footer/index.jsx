@@ -7,7 +7,7 @@ import { AiOutlineTwitter } from 'react-icons/ai';
 
 function Footer() {
     return (
-        <FooterStyles.Wrapper>
+        <FooterStyles.Wrapper id="footer">
             <FooterStyles.Container>
                 <h2>test@gmail.com</h2>
                 <p>+91 9999999999</p>
@@ -32,6 +32,9 @@ function Footer() {
                         <a>Privacy and Policy</a>
                     </Link>
                 </FooterStyles.PolicyContainer>
+                <FooterStyles.Copyright>
+                    <p>© 2021 Footox</p>
+                </FooterStyles.Copyright>
             </FooterStyles.Container>
         </FooterStyles.Wrapper>
     );

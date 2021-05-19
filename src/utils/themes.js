@@ -12,7 +12,7 @@ export const darkTheme = {
         500: '#5B5B5B'
     },
     colorPrimary: {
-        500: '#1766FF'
+        500: '#E64A1D'
     },
     colorSecondary: {
         500: '#17CC75'
@@ -25,6 +25,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: #FFFFFF;
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
   }
 
     *,

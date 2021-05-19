@@ -1,7 +1,7 @@
-import React from 'react';
+import { MenContainer } from '../containers';
 
 function Men() {
-    return <div>Men</div>;
+    return <MenContainer />;
 }
 
 export default Men;

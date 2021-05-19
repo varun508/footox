@@ -52,4 +52,10 @@ FooterStyles.SocialContainer = styled.div`
     }
 `;
 
+FooterStyles.Copyright = styled.div`
+    p {
+        font-size: 0.8rem;
+    }
+`;
+
 export default FooterStyles;
