@@ -4,23 +4,32 @@ const HeaderStyles = {};
 
 HeaderStyles.Wrapper = styled.div`
     height: 100px;
-    position:fixed;
-    top:0;
-    z-index:10;
-    width:100%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: ${({ theme }) => theme.background[500]};
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    @media (max-width: 1024px) {
+        height: 80px;
+    }
+
+    @media (max-width: 768px) {
+    }
+
+    @media (max-width: 600px) {
+        height: 60px;
+    }
 `;
 
 HeaderStyles.Container = styled.div`
-       width: 1500px;
-       margin:0 auto;
-       display:flex;
-       justify-content:space-between;
-       align-items:center;
+    width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `;
 
 HeaderStyles.LogoContainer = styled.div`
@@ -32,13 +41,25 @@ HeaderStyles.LogoContainer = styled.div`
         height: 100%;
     }
 `;
+
 HeaderStyles.NavList = styled.ul`
     height: 50px;
     padding-top: 1rem;
     display: flex;
     list-style: none;
-    width: 450px;
-    justify-content: space-between;
+    gap: 0 20px;
+
+    @media (max-width: 600px) {
+        display: none;
+    }
+`;
+
+HeaderStyles.HeaderMenuContainer = styled.div`
+    display: none;
+
+    @media (max-width: 600px) {
+        display: block;
+    }
 `;
 
 HeaderStyles.NavListItems = styled.li`

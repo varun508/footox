@@ -40,28 +40,45 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 3.5rem;
         font-weight: 700;
         color: ${({ secondary, theme }) =>
-        secondary ? theme.colorSecondary[500] : theme.textPrimary[500]};
+            secondary ? theme.colorSecondary[500] : theme.textPrimary[500]};
+
+        @media (max-width: 768px){
+          font-size: 3rem;
+        }
     }
 
     h2 {
         font-size: 1.5rem;
         font-weight: 600;
         color: ${({ secondary, theme }) =>
-        secondary ? theme.textSecondary[500] : theme.textPrimary[500]};
+            secondary ? theme.textSecondary[500] : theme.textPrimary[500]};
+
+        
+        @media (max-width: 768px){
+          font-size: 1.25rem;
+        }
     }
 
     h3 {
         font-size: 1.3rem;
         font-weight: 500;
         color: ${({ secondary, theme }) =>
-        secondary ? theme.textSecondary[500] : theme.textPrimary[500]};
+            secondary ? theme.textSecondary[500] : theme.textPrimary[500]};
+
+        @media (max-width: 768px){
+          font-size: 1.2rem;
+        }
     }
 
     p {
         font-size: 1rem;
         font-weight: 400;
         color: ${({ secondary, theme }) =>
-        secondary ? theme.textSecondary[500] : theme.textPrimary[500]};
+            secondary ? theme.textSecondary[500] : theme.textPrimary[500]};
+
+        @media (max-width: 600px){
+          font-size: 0.875rem;
+        }
     }
      &::-webkit-scrollbar {
     width: 12px;

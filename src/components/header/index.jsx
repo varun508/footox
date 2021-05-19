@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 
 import HeaderStyles from './styles';
 import { appRoutes } from '../../utils/routes';
+import HeaderMenu from '../header-menu';
 
 function Header() {
     const router = useRouter();
@@ -15,6 +16,9 @@ function Header() {
                         <img src="/images/logo.png" alt="" />
                     </Link>
                 </HeaderStyles.LogoContainer>
+                <HeaderStyles.HeaderMenuContainer>
+                    <HeaderMenu />
+                </HeaderStyles.HeaderMenuContainer>
                 <HeaderStyles.NavList>
                     {appRoutes.map((route, index) => {
                         return (
@@ -26,7 +30,6 @@ function Header() {
                             </HeaderStyles.NavListItems>
                         );
                     })}
-                    <HeaderStyles.NavListItems></HeaderStyles.NavListItems>
                 </HeaderStyles.NavList>
             </HeaderStyles.Container>
         </HeaderStyles.Wrapper>

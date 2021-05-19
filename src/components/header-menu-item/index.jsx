@@ -1,0 +1,22 @@
+import styled from 'styled-components';
+import Link from 'next/link';
+
+const MenuItem = styled.a`
+    color: ${(props) => (props.selected ? 'white' : 'rgba(255, 255, 255, 0.3)')};
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+`;
+
+export default function HeaderMenuItem({ path, setOpen, current, title }) {
+    return (
+        <li style={{ margin: '1rem' }}>
+            <Link href={path}>
+                <MenuItem onClick={() => setOpen(false)} selected={path === current}>
+                    {title}
+                </MenuItem>
+            </Link>
+        </li>
+    );
+}
