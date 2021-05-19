@@ -18,7 +18,7 @@ export const appRoutes = [
         title: "About Us",
         name: "about-us"
     }, {
-        path: "/contact-us",
+        path: "#footer",
         title: "Contact Us",
         name: "contact-us"
     },

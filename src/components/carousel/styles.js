@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
+
 export const CarouselContainer = styled.div`
     overflow: hidden;
-    img {
+    img{
         object-fit: cover;
         width: 100%;
         max-height: 70vh;

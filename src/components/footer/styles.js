@@ -48,5 +48,10 @@ a{
 }
 `
 
+FooterStyles.Copyright = styled.div`
+p{
+    font-size: .8rem;
+}`
+
 
 export default FooterStyles;
