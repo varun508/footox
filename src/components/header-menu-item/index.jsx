@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 const MenuItem = styled.a`
-    color: ${(props) => (props.selected ? 'white' : 'rgba(255, 255, 255, 0.3)')};
+    color: black;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 600;

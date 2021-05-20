@@ -1,8 +1,12 @@
 import styled from 'styled-components';
+import { BiMenu } from 'react-icons/bi';
 
 const HeaderStyles = {};
 
 HeaderStyles.Wrapper = styled.div`
+    position: fixed;
+    top: 0;
+    z-index: 10;
     height: 100px;
     width: 100%;
     display: flex;
@@ -61,6 +65,12 @@ HeaderStyles.HeaderMenuContainer = styled.div`
     }
 `;
 
+HeaderStyles.Nav = styled.div`
+@media (max-width: 600px) {
+    display: none;
+  }
+`
+
 HeaderStyles.NavListItems = styled.li`
     cursor: pointer;
     display: flex;
@@ -81,6 +91,18 @@ HeaderStyles.NavPointer = styled.div`
     margin-top: 3px;
 `;
 
-HeaderStyles.LoginButtonContainer = styled.div``;
+HeaderStyles.HeaderMenuIcon = styled(BiMenu)`
+  height: 40px;
+  width: 40px;
+  padding: 8px;
+  fill: white;
+  background: black;
+  cursor: pointer;
+  border-radius: 50%;
+  display: none;
+  @media (max-width: 600px) {
+    display: block;
+  }
+`;
 
 export default HeaderStyles;

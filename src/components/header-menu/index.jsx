@@ -2,9 +2,10 @@ import { BiX } from 'react-icons/bi';
 import styled, { css } from 'styled-components';
 import { useRouter } from 'next/router';
 import HeaderMenuItem from '../header-menu-item';
+import { appRoutes } from '../../utils/routes';
 
 const Container = styled.div`
-    background: ${({ theme }) => 'red'};
+    background: white;
     height: 100vh;
     width: 100vw;
     position: fixed;
@@ -12,7 +13,8 @@ const Container = styled.div`
     left: 0;
     display: flex;
     flex-direction: column;
-    z-index: 15;
+    justify-content: center;
+    z-index: 100;
     transition: all 1s ease-in-out;
     clip-path: circle(0vh at 92% 4%);
     ${({ open }) =>
@@ -28,10 +30,12 @@ const HeaderMenuIcon = styled(BiX)`
     height: 40px;
     width: 40px;
     cursor: pointer;
-    margin: 1rem;
+    position: absolute;
+    right: 1.3rem;
+    top: 0.7rem;
     align-self: flex-end;
     padding: 8px;
-    fill: red;
+    fill: white;
 `;
 
 const HeaderNavList = styled.ul`
@@ -47,36 +51,13 @@ const HeaderNavList = styled.ul`
     }
 `;
 
-const routes = [
-    {
-        path: '/men',
-        title: 'Men'
-    },
-    {
-        path: '/women',
-        title: 'Women'
-    },
-    {
-        path: '/kids',
-        title: 'Kids'
-    },
-    {
-        path: '/about-us',
-        title: 'About Us'
-    },
-    {
-        path: '/contact-us',
-        title: 'Contact Us'
-    }
-];
-
 export default function HeaderMenu({ open, setOpen }) {
     const router = useRouter();
     return (
         <Container open={open}>
             <HeaderMenuIcon onClick={() => setOpen(false)} />
             <HeaderNavList>
-                {routes.map((route) => (
+                {appRoutes.map((route) => (
                     <HeaderMenuItem
                         key={route.path}
                         current={router.pathname}
