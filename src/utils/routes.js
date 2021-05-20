@@ -1,8 +1,18 @@
 export const appRoutes = [
     {
-        path: '/collection',
-        title: 'Collection',
-        name: 'collection'
+        path: '/collection?type=men',
+        title: 'Men',
+        name: 'men'
+    },
+    {
+        path: '/collection?type=women',
+        title: 'Women',
+        name: 'women'
+    },
+    {
+        path: '/collection?type=kids',
+        title: 'Kids',
+        name: 'kids'
     },
     {
         path: '/about-us',
