@@ -1,33 +1,33 @@
-import MenContainerStyles from './styles';
+import CollectionContainerStyles from './styles';
 import { ProductCard } from '../../components';
 import { products } from '../../sample/products';
 
 import 'react-dropdown/style.css';
 
-function MenContainer() {
+function CollectionContainer() {
     const options = ['All', 'Latest', 'Price high to low', 'Price low to high'];
     const defaultOption = options[0];
     return (
-        <MenContainerStyles.Wrapper>
-            <MenContainerStyles.Container>
-                <MenContainerStyles.FilterContainer>
-                    <h2>Men Items</h2>
-                    <MenContainerStyles.CustomDropdown
+        <CollectionContainerStyles.Wrapper>
+            <CollectionContainerStyles.Container>
+                <CollectionContainerStyles.FilterContainer>
+                    <h2>Collections</h2>
+                    <CollectionContainerStyles.CustomDropdown
                         style={{ width: '100px !important' }}
                         options={options}
                         onChange={() => {}}
                         value={defaultOption}
                         placeholder="Filter"
                     />
-                </MenContainerStyles.FilterContainer>
-                <MenContainerStyles.ProductItemsContainer>
+                </CollectionContainerStyles.FilterContainer>
+                <CollectionContainerStyles.ProductItemsContainer>
                     {products.map((product, index) => (
                         <ProductCard key={index} product={product} />
                     ))}
-                </MenContainerStyles.ProductItemsContainer>
-            </MenContainerStyles.Container>
-        </MenContainerStyles.Wrapper>
+                </CollectionContainerStyles.ProductItemsContainer>
+            </CollectionContainerStyles.Container>
+        </CollectionContainerStyles.Wrapper>
     );
 }
 
-export default MenContainer;
+export default CollectionContainer;
