@@ -67,7 +67,7 @@ export const GlobalStyle = createGlobalStyle`
             secondary ? theme.textSecondary[500] : theme.textPrimary[500]};
 
         @media (max-width: 768px){
-          font-size: 1.2rem;
+          font-size: 1rem;
         }
     }
 
