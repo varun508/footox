@@ -7,11 +7,7 @@ import { Header, Footer } from '../components';
 import { client } from '../utils/api-client';
 
 const AppContainer = styled.div`
-    padding-top: 100px;
-
-    @media (max-width: 1024px) {
-        padding-top: 80px;
-    }
+    padding-top: 80px;
 
     @media (max-width: 600px) {
         padding-top: 60px;

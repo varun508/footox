@@ -7,7 +7,7 @@ HeaderStyles.Wrapper = styled.div`
     position: fixed;
     top: 0;
     z-index: 10;
-    height: 100px;
+    height: 80px;
     width: 100%;
     display: flex;
     justify-content: space-between;
