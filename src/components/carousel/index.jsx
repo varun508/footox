@@ -1,7 +1,9 @@
 import React from 'react';
-import AliceCarousel from 'react-alice-carousel';
+import { gql, useQuery } from '@apollo/client';
 
+import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
+
 import { CarouselContainer } from './styles';
 
 const handleDragStart = (e) => e.preventDefault();
@@ -27,7 +29,25 @@ const items = [
     </a>
 ];
 
+const GET_BANNERS = gql`
+  query GetBanners {
+    banners {
+        bannerImage {
+            id
+        }
+        bannerLink
+    }
+  }
+`;
+
 const Carousel = () => {
+    const { loading, error, data } = useQuery(GET_BANNERS);
+
+    if (loading) return 'Loading...';
+    if (error) return `Error! ${error.message}`;
+
+    console.log(data);
+
     return (
         <CarouselContainer>
             <AliceCarousel
@@ -44,5 +64,6 @@ const Carousel = () => {
         </CarouselContainer>
     );
 };
+
 
 export default Carousel;
