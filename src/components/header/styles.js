@@ -14,7 +14,7 @@ HeaderStyles.Wrapper = styled.div`
     align-items: center;
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(20px);
-    box-shadow: 0px 0px 2px 1px #000000;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
 
     @media (max-width: 1024px) {
         height: 80px;
@@ -66,10 +66,10 @@ HeaderStyles.HeaderMenuContainer = styled.div`
 `;
 
 HeaderStyles.Nav = styled.div`
-@media (max-width: 600px) {
-    display: none;
-  }
-`
+    @media (max-width: 600px) {
+        display: none;
+    }
+`;
 
 HeaderStyles.NavListItems = styled.li`
     cursor: pointer;
@@ -92,17 +92,17 @@ HeaderStyles.NavPointer = styled.div`
 `;
 
 HeaderStyles.HeaderMenuIcon = styled(BiMenu)`
-  height: 40px;
-  width: 40px;
-  padding: 8px;
-  fill: white;
-  background: black;
-  cursor: pointer;
-  border-radius: 50%;
-  display: none;
-  @media (max-width: 600px) {
-    display: block;
-  }
+    height: 40px;
+    width: 40px;
+    padding: 8px;
+    fill: white;
+    background: black;
+    cursor: pointer;
+    border-radius: 50%;
+    display: none;
+    @media (max-width: 600px) {
+        display: block;
+    }
 `;
 
 export default HeaderStyles;
