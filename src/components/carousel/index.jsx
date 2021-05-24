@@ -8,45 +8,18 @@ import { CarouselContainer } from './styles';
 
 const handleDragStart = (e) => e.preventDefault();
 
-const items = [
-    <a href="#">
-        <img
-            src="https://static.metroshoes.net/media/wysiwyg/homepage/Lets-be-The-Bright-Homepage-Banner-MAY.jpg"
-            onDragStart={handleDragStart}
-        />
-    </a>,
-    <a href="#">
-        <img
-            src="https://static.metroshoes.net/media/wysiwyg/homepage/Sanitise-Collection-homepage-Banner-MAY-METRO.jpg"
-            onDragStart={handleDragStart}
-        />
-    </a>,
-    <a href="#">
-        <img
-            src="https://static.metroshoes.net/media/wysiwyg/homepage/Shop-For-Mask-New-Website-Banner-1366x470.jpg"
-            onDragStart={handleDragStart}
-        />
-    </a>
-];
+const CarouselImage = ({ href, imgLink }) => {
+    return (
+        <a href={href}>
+            <img src={imgLink} onDragStart={handleDragStart} />
+        </a>
+    );
+};
 
-const GET_BANNERS = gql`
-  query GetBanners {
-    banners {
-        bannerImage {
-            id
-        }
-        bannerLink
-    }
-  }
-`;
-
-const Carousel = () => {
-    const { loading, error, data } = useQuery(GET_BANNERS);
-
-    if (loading) return 'Loading...';
-    if (error) return `Error! ${error.message}`;
-
-    console.log(data);
+const Carousel = ({ bannerData }) => {
+    const carouselItems = bannerData.map((item) => {
+        return <CarouselImage imgLink={item.bannerImage?.url} href={item.bannerLink} />;
+    });
 
     return (
         <CarouselContainer>
@@ -59,11 +32,10 @@ const Carousel = () => {
                 infinite
                 touchTracking={false}
                 disableButtonsControls
-                items={items}
+                items={carouselItems}
             />
         </CarouselContainer>
     );
 };
-
 
 export default Carousel;

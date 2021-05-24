@@ -44,6 +44,9 @@ CollectionStyles.FilterContainer = styled.div`
     display: flex;
     padding: 10px 1rem;
     justify-content: space-between;
+    h2 {
+        text-transform: capitalize;
+    }
 `;
 CollectionStyles.CustomDropdown = styled(Dropdown)`
     width: 150px;
