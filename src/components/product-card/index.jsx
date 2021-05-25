@@ -5,7 +5,7 @@ const ProductCard = ({ product }) => {
     return (
         <ProductCardStyles.Wrapper>
             <ProductCardStyles.Container>
-                <img src={product.imageUrl} />
+                <img src={product.images[0].url} />
             </ProductCardStyles.Container>
             <ProductCardStyles.DetailContainer>
                 <h3>{product.name}</h3>

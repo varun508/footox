@@ -1,28 +1,70 @@
 import CollectionStyles from './styles';
 import { Pagination, ProductCard } from '../../components';
-import { products } from '../../sample/products';
 
 import 'react-dropdown/style.css';
 import { useRouter } from 'next/router';
 import { gql, useQuery } from '@apollo/client';
+import { useState } from 'react';
+
+// const GET_COLLECTION_DATA = gql`
+//     query getCollection($id: ID!) {
+//         products(where: { id: $id }) {
+//             name
+//             images {
+//                 url
+//             }
+//             slug
+//             description
+//             price
+//             categories {
+//                 name
+//             }
+//             productSizeVariants {
+//                 name
+//                 size
+//             }
+//             productColorVariants {
+//                 color
+//                 name
+//             }
+//         }
+//     }
+// `;
 
 const GET_COLLECTION_DATA = gql`
-    query GetHomeData {
-        deals {
-            dealImage {
+    query getCollection($category: String!) {
+        products(where: { categories_some: { name_starts_with: $category } }) {
+            name
+            images {
                 url
             }
-            dealLink
+
+            flipkartLink
+            amazonLink
+            price
         }
     }
 `;
 
 function CollectionContainer() {
+    const [skip, setSkip] = useState(12);
+    const [page, setPage] = useState(1);
+    const [offset, setOffset] = useState(12);
     const options = ['All', 'Latest', 'Price high to low', 'Price low to high'];
     const defaultOption = options[0];
 
     const router = useRouter();
-    const collectionType = router?.query?.type;
+    const collectionType = router?.query?.type ? router?.query?.type : '';
+
+    const { loading, error, data } = useQuery(GET_COLLECTION_DATA, {
+        variables: { category: collectionType }
+    });
+
+    if (loading) return 'Loading...';
+    if (error) return `Error! ${error.message}`;
+    const products = data ? data?.products : [];
+
+    console.log(data);
 
     return (
         <CollectionStyles.Wrapper>
