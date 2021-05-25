@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+
 import HeaderStyles from './styles';
 import { appRoutes } from '../../utils/routes';
 import HeaderMenu from '../header-menu';
-
 import HeaderMenuContextProvider, { HeaderMenuContext } from '../../context/header-menu-context';
 
 function Header() {
