@@ -1,48 +1,19 @@
 import React from 'react';
 import DealsStyles from './styles';
 
-const Deals = () => {
+const Deals = ({ dealsData }) => {
     return (
         <DealsStyles.Container>
             <DealsStyles.DealsCardWrapper>
-                <DealsStyles.Card>
-                    <a href="#">
-                        <img
-                            src={
-                                'https://static.metroshoes.net/media/wysiwyg/homepage/Comfy-casual-Collection-MID-BANNER-METRO-REV.jpg'
-                            }
-                        />
-                    </a>
-                </DealsStyles.Card>
-                <DealsStyles.Card>
-                    <a href="#">
-                        <img
-                            src={
-                                'https://static.metroshoes.net/media/wysiwyg/homepage/Crocs-MID-BANNER-MAY-2021.jpg'
-                            }
-                            alt=""
-                        />
-                    </a>
-                </DealsStyles.Card>
-                <DealsStyles.Card>
-                    <a href="#">
-                        <img
-                            src={
-                                'https://static.metroshoes.net/media/wysiwyg/homepage/WFH-WOMEN-MID-BANNER-METRO.jpg'
-                            }
-                            alt=""
-                        />
-                    </a>
-                </DealsStyles.Card>
-                <DealsStyles.Card>
-                    <a href="#">
-                        <img
-                            src={
-                                'https://static.metroshoes.net/media/wysiwyg/homepage/WFH-MEN-MID-BANNER-METRO.jpg'
-                            }
-                        />
-                    </a>
-                </DealsStyles.Card>
+                {dealsData?.map((el, index) => {
+                    return (
+                        <DealsStyles.Card key={index}>
+                            <a href={el.dealLink} target="__blank">
+                                <img src={el.dealImage?.url} />
+                            </a>
+                        </DealsStyles.Card>
+                    );
+                })}
             </DealsStyles.DealsCardWrapper>
         </DealsStyles.Container>
     );

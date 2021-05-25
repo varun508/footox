@@ -8,6 +8,7 @@ import HeaderMenuContextProvider, { HeaderMenuContext } from '../../context/head
 
 function Header() {
     const router = useRouter();
+    const collectionType = router?.query?.type;
 
     return (
         <HeaderMenuContextProvider>
@@ -31,7 +32,7 @@ function Header() {
                                                 <Link href={route.path}>
                                                     <a>{route.title}</a>
                                                 </Link>
-                                                {router.asPath === route.path && (
+                                                {collectionType === route.name && (
                                                     <HeaderStyles.NavPointer />
                                                 )}
                                             </HeaderStyles.NavListItems>
