@@ -11,7 +11,12 @@ const Deals = ({ dealsData }) => {
                         <DealsStyles.Card key={index}>
                             <a href={el.dealLink} target="__blank">
                                 <DealsStyles.ImageContainer>
-                                    <Image height={450} width={450} src={el.dealImage?.url} />
+                                    <Image
+                                        objectFit="contain"
+                                        height={358}
+                                        width={450}
+                                        src={el.dealImage?.url}
+                                    />
                                 </DealsStyles.ImageContainer>
                             </a>
                         </DealsStyles.Card>

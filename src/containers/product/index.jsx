@@ -44,6 +44,7 @@ function Product(props) {
     console.log(data);
 
     const product = data?.products ? data?.products[0] : {};
+    console.log(product);
 
     return (
         <ProductStyles.Wrapper>
@@ -57,25 +58,25 @@ function Product(props) {
                     <>
                         <ProductStyles.LeftContainer>
                             <ProductStyles.GalleryContainer>
-                                <MyImageGallery images={product.images} />
+                                <MyImageGallery images={product?.images} />
                             </ProductStyles.GalleryContainer>
                         </ProductStyles.LeftContainer>
                         <ProductStyles.RightContainer>
                             {/* <ProductStyles.Portal id="myPortal" /> */}
-                            <h2>{product.name}</h2>
-                            <h3>₹{product.price}</h3>
-                            <p>{product.description} </p>
+                            <h2>{product?.name}</h2>
+                            <h3>₹{product?.price}</h3>
+                            <p>{product?.description} </p>
 
                             <ProductStyles.ButtonContainer>
-                                {product.amazonLink && (
-                                    <a href={product.amazonLink} target="__blank">
+                                {product?.amazonLink && (
+                                    <a href={product?.amazonLink} target="__blank">
                                         <ProductStyles.CustomButton color="#F0C17D22">
                                             <img src="/images/amazon.png" alt="" />
                                         </ProductStyles.CustomButton>
                                     </a>
                                 )}
-                                {product.flipkartLink && (
-                                    <a href={product.flipkartLink} target="__blank">
+                                {product?.flipkartLink && (
+                                    <a href={product?.flipkartLink} target="__blank">
                                         <ProductStyles.CustomButton color="#4B9BDE22">
                                             <img src="/images/flipkart.svg" alt="" />
                                         </ProductStyles.CustomButton>

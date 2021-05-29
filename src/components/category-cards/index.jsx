@@ -1,6 +1,14 @@
 import React from 'react';
 import CategoryCardStyles from './styles';
 import Image from 'next/image';
+import Link from 'next/link';
+
+function cardLink(type) {
+    if (type === 'Men') return '/collection?type=men';
+    else if (type === 'Women') return '/collection?type=women';
+    else if (type === 'Kids') return '/collection?type=kids';
+    else return '/collection?type=men';
+}
 
 const CategoryCards = ({ categoryData }) => {
     categoryData = categoryData.slice(0, 3);
@@ -9,9 +17,9 @@ const CategoryCards = ({ categoryData }) => {
             {categoryData.map((el, index) => {
                 return (
                     <CategoryCardStyles.Card key={index}>
-                        <a href={el.dealLink}>
+                        <Link href={cardLink(el.name)}>
                             <Image width={350} height={350} src={el.image?.url} />
-                        </a>
+                        </Link>
                     </CategoryCardStyles.Card>
                 );
             })}
