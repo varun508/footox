@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { gql, useQuery } from '@apollo/client';
 
 import { ChasingDots } from 'styled-spinkit';
 import ProductStyles from './styles';
 import MyImageGallery from './imageGallery';
+import { useRouter } from 'next/router';
 
 const GET_PRODUCT_DATA = gql`
     query getProduct($id: ID!) {
@@ -34,8 +35,9 @@ const GET_PRODUCT_DATA = gql`
 `;
 
 function Product(props) {
+    const routes = useRouter();
     const { loading, error, data } = useQuery(GET_PRODUCT_DATA, {
-        variables: { id: 'ckpa67i8gca8i0a64duav25q6' }
+        variables: { id: routes.query.id }
     });
 
     if (error) return `Error! ${error.message}`;

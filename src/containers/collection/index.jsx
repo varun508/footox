@@ -2,6 +2,8 @@ import CollectionStyles from './styles';
 import { Pagination, ProductCard } from '../../components';
 import { ChasingDots } from 'styled-spinkit';
 
+import Link from 'next/link';
+
 import 'react-dropdown/style.css';
 import { useRouter } from 'next/router';
 import { gql, useQuery } from '@apollo/client';
