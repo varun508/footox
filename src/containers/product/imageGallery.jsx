@@ -16,6 +16,7 @@ function MyImageGallery(props) {
         showPlayButton: false,
         showFullscreenButton: false,
         showNav: false,
+        thumbnailPosition: 'left',
         items
     };
 
