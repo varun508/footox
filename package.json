@@ -24,7 +24,8 @@
     "react-image-gallery": "^1.0.9",
     "react-image-magnify": "^2.7.4",
     "react-paginate": "^7.1.2",
-    "styled-components": "^5.2.3"
+    "styled-components": "^5.2.3",
+    "styled-spinkit": "^1.1.0"
   },
   "devDependencies": {
     "eslint": "^7.26.0",

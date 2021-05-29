@@ -1,5 +1,6 @@
 import CollectionStyles from './styles';
 import { Pagination, ProductCard } from '../../components';
+import { ChasingDots } from 'styled-spinkit';
 
 import 'react-dropdown/style.css';
 import { useRouter } from 'next/router';
@@ -38,7 +39,6 @@ const GET_COLLECTION_DATA = gql`
             images {
                 url
             }
-
             flipkartLink
             amazonLink
             price
@@ -60,7 +60,6 @@ function CollectionContainer() {
         variables: { category: collectionType }
     });
 
-    if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
     const products = data ? data?.products : [];
 
@@ -69,27 +68,36 @@ function CollectionContainer() {
     return (
         <CollectionStyles.Wrapper>
             <CollectionStyles.Container>
-                <CollectionStyles.FilterContainer>
-                    <h2> {collectionType}'s Collection</h2>
-                </CollectionStyles.FilterContainer>
-                <CollectionStyles.FilterContainer>
-                    <h2>Filter</h2>
-                    <CollectionStyles.CustomDropdown
-                        style={{ width: '100px !important' }}
-                        options={options}
-                        onChange={() => {}}
-                        value={defaultOption}
-                        placeholder="Filter"
-                    />
-                </CollectionStyles.FilterContainer>
-                <CollectionStyles.ProductItemsContainer>
-                    {products.map((product, index) => (
-                        <ProductCard key={index} product={product} />
-                    ))}
-                </CollectionStyles.ProductItemsContainer>
-                <CollectionStyles.PaginationContainer>
-                    <Pagination />
-                </CollectionStyles.PaginationContainer>
+                {loading ? (
+                    <div className="dot-container">
+                        <ChasingDots />
+                        <h3>loading...</h3>
+                    </div>
+                ) : (
+                    <>
+                        <CollectionStyles.FilterContainer>
+                            <h2> {collectionType}'s Collection</h2>
+                        </CollectionStyles.FilterContainer>
+                        <CollectionStyles.FilterContainer>
+                            <h2>Filter</h2>
+                            <CollectionStyles.CustomDropdown
+                                style={{ width: '100px !important' }}
+                                options={options}
+                                onChange={() => {}}
+                                value={defaultOption}
+                                placeholder="Filter"
+                            />
+                        </CollectionStyles.FilterContainer>
+                        <CollectionStyles.ProductItemsContainer>
+                            {products.map((product, index) => (
+                                <ProductCard key={index} product={product} />
+                            ))}
+                        </CollectionStyles.ProductItemsContainer>
+                        <CollectionStyles.PaginationContainer>
+                            <Pagination />
+                        </CollectionStyles.PaginationContainer>
+                    </>
+                )}
             </CollectionStyles.Container>
         </CollectionStyles.Wrapper>
     );

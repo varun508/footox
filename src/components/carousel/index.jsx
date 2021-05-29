@@ -1,17 +1,20 @@
 import React from 'react';
 import { gql, useQuery } from '@apollo/client';
+import Image from 'next/image';
 
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
-import { CarouselContainer } from './styles';
+import { CarouselContainer, ImageContainer } from './styles';
 
 const handleDragStart = (e) => e.preventDefault();
 
 const CarouselImage = ({ href, imgLink }) => {
     return (
         <a href={href}>
-            <img src={imgLink} onDragStart={handleDragStart} />
+            <ImageContainer>
+                <Image layout="fill" src={imgLink} onDragStart={handleDragStart} />
+            </ImageContainer>
         </a>
     );
 };

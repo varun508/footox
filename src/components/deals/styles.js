@@ -21,12 +21,12 @@ const Deals = {
         display: flex;
         justify-content: center;
         align-items: center;
-
-        img {
-            object-fit: contain;
+    `,
+    ImageContainer: styled.div`
             max-width: 100%;
-        }
     `
 };
+
+
 
 export default Deals;

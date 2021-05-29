@@ -8,11 +8,18 @@ CollectionStyles.Wrapper = styled.div`
 `;
 
 CollectionStyles.Container = styled.div`
+    min-height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
-
     max-width: 1200px;
     margin: 0 auto;
+
+    .dot-container{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        margin: auto 0;
+    }
 `;
 
 CollectionStyles.ProductItemsContainer = styled.div`
@@ -22,14 +29,14 @@ CollectionStyles.ProductItemsContainer = styled.div`
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 30px;
+    gap: 1rem;
 
     @media (max-width: 768px) {
         grid-template-columns: 1fr 1fr 1fr;
     }
     @media (max-width: 550px) {
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        gap: .7rem;
     }
 `;
 

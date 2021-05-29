@@ -1,4 +1,5 @@
 import React from 'react';
+import { ChasingDots } from 'styled-spinkit';
 
 import HomeContainerStyles from './styles';
 import { Carousel, CategoryCards, Deals } from '../../components';
@@ -30,17 +31,24 @@ const GET_HOME_DATA = gql`
 function HomeContainer() {
     const { loading, error, data } = useQuery(GET_HOME_DATA);
 
-    if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
 
     console.log(data);
 
     return (
         <HomeContainerStyles.Wrapper>
-            <Carousel bannerData={data.banners} />
-            <CategoryCards categoryData={data.categories} />
-            <Deals dealsData={data.deals} />
-            <HomeContainerStyles.Container></HomeContainerStyles.Container>
+            {loading ? (
+                <>
+                    <ChasingDots />
+                    <h3>loading...</h3>
+                </>
+            ) : (
+                <HomeContainerStyles.Container>
+                    <Carousel bannerData={data.banners} />
+                    <CategoryCards categoryData={data.categories} />
+                    <Deals dealsData={data.deals} />
+                </HomeContainerStyles.Container>
+            )}
         </HomeContainerStyles.Wrapper>
     );
 }

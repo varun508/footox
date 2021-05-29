@@ -1,5 +1,6 @@
 import React from 'react';
 import DealsStyles from './styles';
+import Image from 'next/image';
 
 const Deals = ({ dealsData }) => {
     return (
@@ -9,7 +10,9 @@ const Deals = ({ dealsData }) => {
                     return (
                         <DealsStyles.Card key={index}>
                             <a href={el.dealLink} target="__blank">
-                                <img src={el.dealImage?.url} />
+                                <DealsStyles.ImageContainer>
+                                    <Image height={450} width={450} src={el.dealImage?.url} />
+                                </DealsStyles.ImageContainer>
                             </a>
                         </DealsStyles.Card>
                     );

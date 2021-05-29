@@ -1,11 +1,12 @@
 import React from 'react';
 import ProductCardStyles from './styles';
+import Image from 'next/image';
 
 const ProductCard = ({ product }) => {
     return (
         <ProductCardStyles.Wrapper>
             <ProductCardStyles.Container>
-                <img src={product.images[0].url} />
+                <Image width={400} height={400} objectFit="contain" src={product.images[0].url} />
             </ProductCardStyles.Container>
             <ProductCardStyles.DetailContainer>
                 <h3>{product.name}</h3>
