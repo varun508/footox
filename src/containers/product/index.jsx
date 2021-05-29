@@ -55,7 +55,7 @@ function Product(props) {
                     <>
                         <ProductStyles.LeftContainer>
                             <ProductStyles.GalleryContainer>
-                                <MyImageGallery />
+                                <MyImageGallery images={product.images} />
                             </ProductStyles.GalleryContainer>
                         </ProductStyles.LeftContainer>
                         <ProductStyles.RightContainer>
