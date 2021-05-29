@@ -34,7 +34,7 @@ const GET_PRODUCT_DATA = gql`
 
 function Product(props) {
     const { loading, error, data } = useQuery(GET_PRODUCT_DATA, {
-        variables: { id: 'ckp1muqg05nxo0b610m722i3v' }
+        variables: { id: 'ckpa67i8gca8i0a64duav25q6' }
     });
 
     if (loading) return 'Loading...';
@@ -48,7 +48,7 @@ function Product(props) {
             <ProductStyles.Container>
                 <ProductStyles.LeftContainer>
                     <ProductStyles.GalleryContainer>
-                        <MyImageGallery />
+                        <MyImageGallery images={product.images} />
                     </ProductStyles.GalleryContainer>
                 </ProductStyles.LeftContainer>
                 <ProductStyles.RightContainer>

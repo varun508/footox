@@ -35,6 +35,7 @@ import { useState } from 'react';
 const GET_COLLECTION_DATA = gql`
     query getCollection($category: String!) {
         products(where: { categories_some: { name_starts_with: $category } }) {
+            id
             name
             images {
                 url
