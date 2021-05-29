@@ -17,10 +17,15 @@ max-width: 1800px;
 margin: 0 auto;
 min-height: 100vh;
 
+.dot-container{
+    margin: auto ;
+}
+
 @media (max-width:1080px){
     flex-direction: column;
 }
 `
+
 
 ProductStyles.LeftContainer = styled.div`
 display: flex;
