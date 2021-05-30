@@ -12,7 +12,7 @@ const ProductCard = ({ product }) => {
                         width={400}
                         height={400}
                         objectFit="contain"
-                        src={product.images[0].url}
+                        src={product.thumbnail.url}
                     />
                 </ProductCardStyles.Container>
                 <ProductCardStyles.DetailContainer>

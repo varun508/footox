@@ -42,6 +42,9 @@ const GET_COLLECTION_DATA = gql`
             images {
                 url
             }
+            thumbnail {
+                url
+            }
             flipkartLink
             amazonLink
             price
