@@ -9,7 +9,7 @@ function Footer() {
     return (
         <FooterStyles.Wrapper id="footer">
             <FooterStyles.Container>
-                <h2>test@gmail.com</h2>
+                <h2>info@footox.in</h2>
                 <p>+91 9999999999</p>
                 <p>KH.No-53/9/1 & 12/2 Firni Road Industrial Area Mundka</p>
                 <p>New Delhi-110041</p>
@@ -24,14 +24,14 @@ function Footer() {
                         <AiOutlineTwitter size={32} color={'#1DA1F2'} />
                     </a>
                 </FooterStyles.SocialContainer>
-                <FooterStyles.PolicyContainer>
+                {/* <FooterStyles.PolicyContainer>
                     <Link href="/terms-and-conditions">
                         <a>Terms and Conditions</a>
                     </Link>
                     <Link href="/privacy-policy">
                         <a>Privacy and Policy</a>
                     </Link>
-                </FooterStyles.PolicyContainer>
+                </FooterStyles.PolicyContainer> */}
                 <FooterStyles.Copyright>
                     <p>© 2021 Footox</p>
                 </FooterStyles.Copyright>
