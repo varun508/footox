@@ -20,6 +20,10 @@ const GET_PRODUCT_DATA = gql`
             categories {
                 name
             }
+            descriptionPoints {
+                text
+                html
+            }
             flipkartLink
             amazonLink
             productSizeVariants {
@@ -66,7 +70,15 @@ function Product(props) {
                             <h2>{product?.name}</h2>
                             <h3>₹{product?.price}</h3>
                             <p>{product?.description} </p>
-
+                            <ul>
+                                {product?.descriptionPoints?.text
+                                    .split('\\n')
+                                    .map((item, index) => (
+                                        <li key={index}>
+                                            <p> {item}</p>
+                                        </li>
+                                    ))}
+                            </ul>
                             <ProductStyles.ButtonContainer>
                                 {product?.amazonLink && (
                                     <a href={product?.amazonLink} target="__blank">
