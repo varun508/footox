@@ -14,10 +14,10 @@ CollectionStyles.Container = styled.div`
     max-width: 1200px;
     margin: 0 auto;
 
-    .dot-container{
+    .dot-container {
         display: flex;
         flex-direction: column;
-        align-items:center;
+        align-items: center;
         margin: auto 0;
     }
 `;
@@ -36,7 +36,7 @@ CollectionStyles.ProductItemsContainer = styled.div`
     }
     @media (max-width: 550px) {
         grid-template-columns: 1fr 1fr;
-        gap: .7rem;
+        gap: 0.7rem;
     }
 `;
 
@@ -51,13 +51,15 @@ CollectionStyles.FilterContainer = styled.div`
     display: flex;
     padding: 10px 1rem;
     justify-content: space-between;
+    z-index: 1;
     h2 {
         text-transform: capitalize;
     }
 `;
 CollectionStyles.CustomDropdown = styled(Dropdown)`
-    width: 150px;
     z-index: 0;
+    min-width: 150px;
+    margin-top: 5px;
 `;
 
 export default CollectionStyles;

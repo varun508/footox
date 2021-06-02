@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { gql, useQuery } from '@apollo/client';
 
 import { ChasingDots } from 'styled-spinkit';
@@ -15,12 +15,12 @@ const GET_PRODUCT_DATA = gql`
                 url
             }
             slug
-            description
+
             price
             categories {
                 name
             }
-            descriptionPoints {
+            description {
                 text
                 html
             }
@@ -39,6 +39,8 @@ const GET_PRODUCT_DATA = gql`
 `;
 
 function Product(props) {
+    const descriptionRef = useRef(null);
+
     const routes = useRouter();
     const { loading, error, data } = useQuery(GET_PRODUCT_DATA, {
         variables: { id: routes.query.id }
@@ -49,6 +51,11 @@ function Product(props) {
 
     const product = data?.products ? data?.products[0] : {};
     console.log(product);
+
+    console.log(descriptionRef);
+    console.log(product?.description?.html);
+
+    if (descriptionRef?.current) descriptionRef.current.innerHTML = product?.description?.html;
 
     return (
         <ProductStyles.Wrapper>
@@ -69,16 +76,11 @@ function Product(props) {
                             {/* <ProductStyles.Portal id="myPortal" /> */}
                             <h2>{product?.name}</h2>
                             <h3>₹{product?.price}</h3>
-                            <p>{product?.description} </p>
-                            <ul>
-                                {product?.descriptionPoints?.text
-                                    .split('\\n')
-                                    .map((item, index) => (
-                                        <li key={index}>
-                                            <p> {item}</p>
-                                        </li>
-                                    ))}
-                            </ul>
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html: product?.description?.html
+                                }}></div>
+
                             <ProductStyles.ButtonContainer>
                                 {product?.amazonLink && (
                                     <a href={product?.amazonLink} target="__blank">

@@ -3,12 +3,13 @@ import ReactPaginate from 'react-paginate';
 
 import PaginationStyles from './styles.js';
 
-const Pagination = ({ pageCount = 3, onPageChange }) => {
+const Pagination = ({ pageCount = 3, onPageChange, pageSelected = 0 }) => {
     return (
         <PaginationStyles.Container>
             <ReactPaginate
                 previousLabel={'<'}
                 nextLabel={'>'}
+                initialPage={pageSelected}
                 breakLabel={'...'}
                 breakClassName={'break-me'}
                 pageCount={pageCount}
