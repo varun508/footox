@@ -47,14 +47,22 @@ CollectionStyles.PaginationContainer = styled.div`
     justify-content: center;
 `;
 
-CollectionStyles.FilterContainer = styled.div`
+CollectionStyles.HeadingContainer = styled.div`
     display: flex;
     padding: 10px 1rem;
-    justify-content: space-between;
+    gap: 20px;
     z-index: 1;
     h2 {
         text-transform: capitalize;
     }
+`;
+
+CollectionStyles.FilterContainer = styled.div`
+    display: flex;
+    padding: 10px 1rem;
+    justify-content: flex-end;
+    gap: 20px;
+    z-index: 1;
 `;
 CollectionStyles.CustomDropdown = styled(Dropdown)`
     z-index: 0;

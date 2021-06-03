@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const ProductCard = {
     Wrapper: styled.div`
-        padding:10px;
+        padding: 10px;
         width: 100%;
         display: flex;
         overflow: hidden;
@@ -10,13 +10,14 @@ const ProductCard = {
         cursor: pointer;
         transition: ease-in-out 0.3s ease-in-out;
         border: solid 1px rgba(0, 0, 0, 0);
+        border-bottom: solid 1px rgba(0, 0, 0, 0.2);
         :hover {
             border: solid 1px rgba(0, 0, 0, 0.2);
         }
-        h3{
+        h3 {
             font-size: 16px;
         }
-        p{
+        p {
             font-size: 20px;
         }
     `,

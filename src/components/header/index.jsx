@@ -32,7 +32,8 @@ function Header() {
                                                 <Link href={route.path}>
                                                     <a>{route.title}</a>
                                                 </Link>
-                                                {collectionType === route.name && (
+                                                {(collectionType === route.name ||
+                                                    route.path === router.pathname) && (
                                                     <HeaderStyles.NavPointer />
                                                 )}
                                             </HeaderStyles.NavListItems>
