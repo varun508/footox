@@ -49,6 +49,15 @@ CollectionStyles.ProductItemsContainer = styled.div`
     }
 `;
 
+CollectionStyles.NoContent = styled.div`
+    height: 100%;
+    width: 100%;
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
 CollectionStyles.PaginationContainer = styled.div`
     width: 100%;
     margin: 40px 0;

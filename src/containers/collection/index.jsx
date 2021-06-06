@@ -172,22 +172,31 @@ function CollectionContainer() {
                             </div>
                         </CollectionStyles.FilterContainer>
 
-                        <CollectionStyles.ProductItemsContainer>
-                            {products.map((product, index) => (
-                                <ProductCard key={index} product={product} />
-                            ))}
-                        </CollectionStyles.ProductItemsContainer>
-                        <CollectionStyles.PaginationContainer>
-                            <Pagination
-                                pageSelected={pageNo}
-                                pageCount={
-                                    productsCount % first === 0
-                                        ? parseInt(productsCount / first)
-                                        : parseInt(productsCount / first) + 1
-                                }
-                                onPageChange={handlePaginationChange}
-                            />
-                        </CollectionStyles.PaginationContainer>
+                        {products?.length !== 0 ? (
+                            <CollectionStyles.ProductItemsContainer>
+                                {products.map((product, index) => (
+                                    <ProductCard key={index} product={product} />
+                                ))}
+                            </CollectionStyles.ProductItemsContainer>
+                        ) : (
+                            <CollectionStyles.NoContent>
+                                <h3>No Product Avaiable</h3>
+                            </CollectionStyles.NoContent>
+                        )}
+
+                        {products?.length !== 0 && (
+                            <CollectionStyles.PaginationContainer>
+                                <Pagination
+                                    pageSelected={pageNo}
+                                    pageCount={
+                                        productsCount % first === 0
+                                            ? parseInt(productsCount / first)
+                                            : parseInt(productsCount / first) + 1
+                                    }
+                                    onPageChange={handlePaginationChange}
+                                />
+                            </CollectionStyles.PaginationContainer>
+                        )}
                     </>
                 )}
             </CollectionStyles.Container>
