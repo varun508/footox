@@ -10,7 +10,7 @@ const ProductCard = {
         cursor: pointer;
         transition: ease-in-out 0.3s ease-in-out;
         border: solid 1px rgba(0, 0, 0, 0);
-        border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+        border: solid 1px rgba(0, 0, 0, 0.2);
         :hover {
             border: solid 1px rgba(0, 0, 0, 0.2);
         }

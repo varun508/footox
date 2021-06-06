@@ -34,10 +34,11 @@ CollectionStyles.ProductItemsContainer = styled.div`
     padding: 0 20px;
     flex: 1;
     margin: 0 auto;
+    margin-top: 40px;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1rem;
+    gap: 30px;
 
     @media (max-width: 768px) {
         grid-template-columns: 1fr 1fr 1fr;
@@ -60,12 +61,13 @@ CollectionStyles.HeadingContainer = styled.div`
     padding: 10px 1rem;
     gap: 20px;
     z-index: 1;
+    margin-bottom: 10px;
 `;
 
 CollectionStyles.FilterContainer = styled.div`
     display: flex;
     padding: 10px 1rem;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
     gap: 20px;
     z-index: 1;
 `;
