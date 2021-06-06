@@ -10,12 +10,23 @@ ProductStyles.Wrapper = styled.div`
     }
 `;
 
+ProductStyles.ColorContainer = styled.div`
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+
+    p {
+        padding: 0px 10px;
+        border: 1px solid #ddd;
+    }
+`;
+
 ProductStyles.Container = styled.div`
     display: flex;
     gap: 0 2rem;
     max-width: 1800px;
     margin: 0 auto;
-    min-height: 100vh;
+    min-height: 80vh;
 
     .dot-container {
         margin: auto;

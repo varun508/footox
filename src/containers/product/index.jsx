@@ -5,6 +5,7 @@ import { ChasingDots } from 'styled-spinkit';
 import ProductStyles from './styles';
 import MyImageGallery from './imageGallery';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 const GET_PRODUCT_DATA = gql`
     query getProduct($id: ID!) {
@@ -59,6 +60,10 @@ function Product(props) {
 
     return (
         <ProductStyles.Wrapper>
+            <Head>
+                <title>Footox | {product?.name}</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
             <ProductStyles.Container>
                 {loading ? (
                     <div className="dot-container">
@@ -80,6 +85,23 @@ function Product(props) {
                                 dangerouslySetInnerHTML={{
                                     __html: product?.description?.html
                                 }}></div>
+
+                            <div>
+                                <b>Available Colors:</b>
+                                <ProductStyles.ColorContainer>
+                                    {product?.productColorVariants?.map((item) => {
+                                        return <p key={item}>{item.color}</p>;
+                                    })}
+                                </ProductStyles.ColorContainer>
+                            </div>
+                            <div>
+                                <b>Available Sizes:</b>
+                                <ProductStyles.ColorContainer>
+                                    {product?.productSizeVariants?.map((item) => {
+                                        return <p key={item}>{item.size}</p>;
+                                    })}
+                                </ProductStyles.ColorContainer>
+                            </div>
 
                             <ProductStyles.ButtonContainer>
                                 {product?.amazonLink && (

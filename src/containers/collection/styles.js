@@ -7,8 +7,16 @@ CollectionStyles.Wrapper = styled.div`
     padding: 2rem 0;
 `;
 
+CollectionStyles.ErrorContainer = styled.div`
+    height: calc(100vh - 80px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
 CollectionStyles.Container = styled.div`
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
     max-width: 1200px;
@@ -52,9 +60,6 @@ CollectionStyles.HeadingContainer = styled.div`
     padding: 10px 1rem;
     gap: 20px;
     z-index: 1;
-    h2 {
-        text-transform: capitalize;
-    }
 `;
 
 CollectionStyles.FilterContainer = styled.div`

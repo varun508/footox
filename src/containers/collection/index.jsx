@@ -1,13 +1,17 @@
 import CollectionStyles from './styles';
 import { Pagination, ProductCard } from '../../components';
 import { ChasingDots } from 'styled-spinkit';
-
+import Head from 'next/head';
 import Link from 'next/link';
 
 import 'react-dropdown/style.css';
 import { useRouter } from 'next/router';
 import { gql, useQuery } from '@apollo/client';
 import { useState } from 'react';
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 const GET_COLLECTION_DATA = gql`
     query getCollection(
@@ -86,7 +90,20 @@ function CollectionContainer() {
             minPrice
         }
     });
-    if (error) return `Error! ${error.message}`;
+    if (error)
+        return (
+            <CollectionStyles.ErrorContainer>
+                <Head>
+                    <title>Error</title>
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                </Head>
+                <h3>
+                    {`Error! ${error.message}`}
+                    <br />
+                    Retry Again
+                </h3>
+            </CollectionStyles.ErrorContainer>
+        );
     let products = data ? data?.products : [];
 
     // **************************** handlers *******************************
@@ -116,6 +133,10 @@ function CollectionContainer() {
 
     return (
         <CollectionStyles.Wrapper>
+            <Head>
+                <title>Footox : {capitalizeFirstLetter(collectionType)}'s Collection</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
             <CollectionStyles.Container>
                 {loading ? (
                     <div className="dot-container">
@@ -125,7 +146,7 @@ function CollectionContainer() {
                 ) : (
                     <>
                         <CollectionStyles.HeadingContainer>
-                            <h2> {collectionType}'s Collection</h2>
+                            <h2> {capitalizeFirstLetter(collectionType)}'s Collection</h2>
                         </CollectionStyles.HeadingContainer>
 
                         <CollectionStyles.FilterContainer>
