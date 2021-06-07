@@ -138,7 +138,8 @@ function CollectionContainer() {
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
             <CollectionStyles.BannerContainer>
-                <img src="https://media.graphcms.com/tCszE1dtTRKqm9nDhkNI" />
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/AudibleIN/2021/AMZ/Jan/amz-storefront-weblab-hero-desktop.jpg" />
+                <CollectionStyles.Overlay />
             </CollectionStyles.BannerContainer>
             <CollectionStyles.Container>
                 {loading ? (
@@ -148,10 +149,7 @@ function CollectionContainer() {
                     </div>
                 ) : (
                     <>
-                        <CollectionStyles.HeadingContainer>
-                            <h2> {capitalizeFirstLetter(collectionType)}'s Collection</h2>
-                        </CollectionStyles.HeadingContainer>
-
+                        <h2>{capitalizeFirstLetter(collectionType)}'s Collection</h2>
                         <CollectionStyles.FilterContainer>
                             <div>
                                 <b>Filter</b>
