@@ -39,6 +39,12 @@ const GET_COLLECTION_DATA = gql`
             amazonLink
             price
         }
+        categories(where: { name_starts_with: $category }) {
+            name
+            bannerImage {
+                url
+            }
+        }
     }
 `;
 
@@ -76,6 +82,8 @@ function CollectionContainer() {
 
     const router = useRouter();
     const collectionType = router?.query?.type ? router?.query?.type : '';
+
+    console.log(collectionType);
 
     const productsArray = useQuery(GET_PRODUCTS, { variables: { category: collectionType } });
     const productsCount = productsArray.data?.length ? productsArray.data.length : 1;
@@ -131,6 +139,7 @@ function CollectionContainer() {
         setSelectedFiltering(selected);
     };
 
+    console.log(data);
     return (
         <CollectionStyles.Wrapper>
             <Head>
@@ -138,7 +147,7 @@ function CollectionContainer() {
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
             <CollectionStyles.BannerContainer>
-                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/AudibleIN/2021/AMZ/Jan/amz-storefront-weblab-hero-desktop.jpg" />
+                <img src={data?.categories[0]?.bannerImage?.url} />
                 <CollectionStyles.Overlay />
             </CollectionStyles.BannerContainer>
             <CollectionStyles.Container>
