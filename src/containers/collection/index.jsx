@@ -134,9 +134,12 @@ function CollectionContainer() {
     return (
         <CollectionStyles.Wrapper>
             <Head>
-                <title>Footox : {capitalizeFirstLetter(collectionType)}'s Collection</title>
+                <title>Footox : {capitalizeFirstLetter(collectionType)} Collection</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
+            <CollectionStyles.BannerContainer>
+                <img src="https://media.graphcms.com/tCszE1dtTRKqm9nDhkNI" />
+            </CollectionStyles.BannerContainer>
             <CollectionStyles.Container>
                 {loading ? (
                     <div className="dot-container">

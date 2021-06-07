@@ -3,8 +3,17 @@ import Dropdown from 'react-dropdown';
 
 const CollectionStyles = {};
 
+CollectionStyles.BannerContainer = styled.div`
+    width: 100%;
+
+    img {
+        width: 100%;
+        object-fit: contain;
+    }
+`;
+
 CollectionStyles.Wrapper = styled.div`
-    padding: 2rem 0;
+    padding: 0 0 2rem;
 `;
 
 CollectionStyles.ErrorContainer = styled.div`
@@ -21,6 +30,28 @@ CollectionStyles.Container = styled.div`
     flex-direction: column;
     max-width: 1200px;
     margin: 0 auto;
+    transform: translateY(-100px);
+    padding-top: 100px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+8 */
+    background: -moz-linear-gradient(
+        top,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 8%,
+        rgba(255, 255, 255, 1) 100%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+        top,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 8%,
+        rgba(255, 255, 255, 1) 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 8%,
+        rgba(255, 255, 255, 1) 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 
     .dot-container {
         display: flex;
