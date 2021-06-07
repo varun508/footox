@@ -13,11 +13,29 @@ ProductStyles.Wrapper = styled.div`
 ProductStyles.ColorContainer = styled.div`
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
     margin-top: 5px;
 
     p {
         padding: 0px 10px;
         border: 1px solid #ddd;
+        border-radius: 5px;
+
+        background-color: #f1f1f1;
+    }
+`;
+ProductStyles.SizeContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 5px;
+
+    p {
+        padding: 0px 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        color: black;
+        background-color: #f1f1f1;
     }
 `;
 
@@ -60,12 +78,22 @@ ProductStyles.GalleryContainer = styled.div`
     & .image-gallery-thumbnail {
         width: 60px;
         height: 60px;
+        border: none;
+
+        :focus,
+        :hover {
+            border: 2px solid #337ab7 !important;
+        }
 
         img {
             object-fit: cover;
             max-height: 52px;
             max-width: 52px;
         }
+    }
+
+    & .image-gallery-thumbnail.active {
+        border: 2px solid #337ab7 !important;
     }
 
     @media (max-width: 1080px) {
@@ -85,6 +113,14 @@ ProductStyles.RightContainer = styled.div`
     p {
         line-height: 2.1;
         text-align: left;
+    }
+
+    & > h3 {
+        text-transform: capitalize;
+    }
+
+    & > h2 {
+        font-size: 1.8rem;
     }
 
     ul {
@@ -123,7 +159,7 @@ ProductStyles.CustomButton = styled(Button)`
 ProductStyles.ButtonContainer = styled.div`
     display: flex;
     gap: 0 1rem;
-    margin-top: 1rem;
+    margin-top: 10px;
     @media (max-width: 1080px) {
         justify-content: center;
     }

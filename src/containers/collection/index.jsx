@@ -180,7 +180,7 @@ function CollectionContainer() {
                             </CollectionStyles.ProductItemsContainer>
                         ) : (
                             <CollectionStyles.NoContent>
-                                <h3>No Product Avaiable</h3>
+                                <h3>No Product Available</h3>
                             </CollectionStyles.NoContent>
                         )}
 

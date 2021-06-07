@@ -79,8 +79,8 @@ function Product(props) {
                         </ProductStyles.LeftContainer>
                         <ProductStyles.RightContainer>
                             {/* <ProductStyles.Portal id="myPortal" /> */}
-                            <h2>{product?.name}</h2>
-                            <h3>₹{product?.price}</h3>
+                            <h3>{product?.name}</h3>
+                            <h2>₹{product?.price}</h2>
                             <div
                                 dangerouslySetInnerHTML={{
                                     __html: product?.description?.html
@@ -96,29 +96,32 @@ function Product(props) {
                             </div>
                             <div>
                                 <b>Available Sizes:</b>
-                                <ProductStyles.ColorContainer>
+                                <ProductStyles.SizeContainer>
                                     {product?.productSizeVariants?.map((item) => {
                                         return <p key={item}>{item.size}</p>;
                                     })}
-                                </ProductStyles.ColorContainer>
+                                </ProductStyles.SizeContainer>
                             </div>
 
-                            <ProductStyles.ButtonContainer>
-                                {product?.amazonLink && (
-                                    <a href={product?.amazonLink} target="__blank">
-                                        <ProductStyles.CustomButton color="#F0C17D22">
-                                            <img src="/images/amazon.png" alt="" />
-                                        </ProductStyles.CustomButton>
-                                    </a>
-                                )}
-                                {product?.flipkartLink && (
-                                    <a href={product?.flipkartLink} target="__blank">
-                                        <ProductStyles.CustomButton color="#4B9BDE22">
-                                            <img src="/images/flipkart.svg" alt="" />
-                                        </ProductStyles.CustomButton>
-                                    </a>
-                                )}
-                            </ProductStyles.ButtonContainer>
+                            <div style={{ marginTop: '20px' }}>
+                                <b>Shop at:</b>
+                                <ProductStyles.ButtonContainer>
+                                    {product?.amazonLink && (
+                                        <a href={product?.amazonLink} target="__blank">
+                                            <ProductStyles.CustomButton color="#F0C17D22">
+                                                <img src="/images/amazon.png" alt="" />
+                                            </ProductStyles.CustomButton>
+                                        </a>
+                                    )}
+                                    {product?.flipkartLink && (
+                                        <a href={product?.flipkartLink} target="__blank">
+                                            <ProductStyles.CustomButton color="#4B9BDE22">
+                                                <img src="/images/flipkart.svg" alt="" />
+                                            </ProductStyles.CustomButton>
+                                        </a>
+                                    )}
+                                </ProductStyles.ButtonContainer>
+                            </div>
                         </ProductStyles.RightContainer>
                     </>
                 )}
