@@ -27,13 +27,9 @@ const GET_PRODUCT_DATA = gql`
             }
             flipkartLink
             amazonLink
-            productSizeVariants {
-                name
-                size
-            }
-            productColorVariants {
-                color
-                name
+            sizes
+            colors {
+                hex
             }
         }
     }
@@ -89,16 +85,20 @@ function Product(props) {
                             <div>
                                 <b>Available Colors:</b>
                                 <ProductStyles.ColorContainer>
-                                    {product?.productColorVariants?.map((item) => {
-                                        return <p key={item}>{item.color}</p>;
+                                    {product?.colors?.map((color) => {
+                                        return (
+                                            <ProductStyles.Color
+                                                color={color.hex}
+                                                key={color}></ProductStyles.Color>
+                                        );
                                     })}
                                 </ProductStyles.ColorContainer>
                             </div>
                             <div>
                                 <b>Available Sizes:</b>
                                 <ProductStyles.SizeContainer>
-                                    {product?.productSizeVariants?.map((item) => {
-                                        return <p key={item}>{item.size}</p>;
+                                    {product?.sizes?.map((item) => {
+                                        return <p key={item}>{item}</p>;
                                     })}
                                 </ProductStyles.SizeContainer>
                             </div>

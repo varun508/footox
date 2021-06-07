@@ -3,8 +3,30 @@ import Dropdown from 'react-dropdown';
 
 const CollectionStyles = {};
 
+CollectionStyles.BannerContainer = styled.div`
+    width: 100%;
+    max-height: 350px;
+    height: 350px;
+    position: relative;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+`;
+
+CollectionStyles.Overlay = styled.div`
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    background: linear-gradient(0deg, #fff, transparent, transparent);
+`;
+
 CollectionStyles.Wrapper = styled.div`
-    padding: 2rem 0;
+    padding: 0 0 2rem;
 `;
 
 CollectionStyles.ErrorContainer = styled.div`
@@ -21,6 +43,16 @@ CollectionStyles.Container = styled.div`
     flex-direction: column;
     max-width: 1200px;
     margin: 0 auto;
+
+    > h2 {
+        color: black;
+        max-width: 1200px;
+        width: 100%;
+        font-size: 2rem;
+        margin: 0 auto;
+        padding: 1rem;
+        margin-top: 1rem;
+    }
 
     .dot-container {
         display: flex;
@@ -75,7 +107,7 @@ CollectionStyles.HeadingContainer = styled.div`
 
 CollectionStyles.FilterContainer = styled.div`
     display: flex;
-    padding: 10px 1rem;
+    padding: 1rem;
     /* justify-content: flex-end; */
     gap: 20px;
     z-index: 1;

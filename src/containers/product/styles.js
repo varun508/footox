@@ -24,6 +24,13 @@ ProductStyles.ColorContainer = styled.div`
         background-color: #f1f1f1;
     }
 `;
+ProductStyles.Color = styled.div`
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+    background-color: ${({ color }) => color};
+`;
+
 ProductStyles.SizeContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -145,6 +152,7 @@ ProductStyles.RightContainer = styled.div`
         }
     }
 `;
+
 ProductStyles.CustomButton = styled(Button)`
     background: ${({ color }) => color};
     color: black;
