@@ -16,8 +16,8 @@ const ProductCard = ({ product }) => {
                     />
                 </ProductCardStyles.Container>
                 <ProductCardStyles.DetailContainer>
-                    <h3>{product.name}</h3>
-                    <p>₹{product.price}</p>
+                    <p>{product.name}</p>
+                    <h3>₹{product.price}</h3>
                 </ProductCardStyles.DetailContainer>
             </ProductCardStyles.Wrapper>
         </Link>
