@@ -7,20 +7,20 @@ FooterStyles.Wrapper = styled.div`
     padding: 2rem 1rem;
     padding-top: 5rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: rgba(0,0,0,0.05);
+    background-color: rgba(0, 0, 0, 0.05);
 
     p {
         color: grey;
     }
 
-    @media(max-width:1280px){
-        h1{
-            font-size:2rem;
+    @media (max-width: 1280px) {
+        h1 {
+            font-size: 2rem;
         }
     }
-    @media(max-width:600px){
-        h1{
-            font-size:1.4rem;
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 1.4rem;
         }
     }
 `;
@@ -31,7 +31,7 @@ FooterStyles.Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
- @media(max-width:800px){
+    @media (max-width: 800px) {
         flex-direction: column-reverse;
     }
 `;
@@ -47,55 +47,55 @@ FooterStyles.PolicyContainer = styled.div`
 `;
 
 FooterStyles.LeftContainer = styled.div`
-display: flex;
-padding: 1rem;
-flex: 1;
-gap:1rem;
-flex-direction: column;
+    display: flex;
+    padding: 1rem;
+    flex: 1;
+    gap: 1rem;
+    flex-direction: column;
 
-.content{
-display: flex;
-flex-direction: column;
-gap: 10px;
-}
-`
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+`;
 
 FooterStyles.RightContainer = styled.div`
-flex: 1;
-`
+    flex: 1;
+`;
 
 FooterStyles.Input = styled.input`
-padding: 10px 0;
-margin: 10px ;
-border: none;
-outline: none;
-width: 100%;
-font-size: 1.1rem;
-font-weight: 600;
-background-color:transparent;
-transition: all ease-in-out .3s;
-border-bottom: 2px solid rgba(0,0,0,.2) ;
-`
+    padding: 10px 0;
+    margin: 10px;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: transparent;
+    transition: all ease-in-out 0.3s;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+`;
 
 FooterStyles.TextArea = styled.textarea`
-padding: 10px 0;
-margin: 10px ;
-border: none;
-outline: none;
-width: 100%;
-font-size: 1.1rem;
-font-weight: 600;
-background-color:transparent;
-transition: all ease-in-out .3s;
-border-bottom: 2px solid rgba(0,0,0,.2) ;
-`
+    padding: 10px 0;
+    margin: 10px;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: transparent;
+    transition: all ease-in-out 0.3s;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+`;
 
 FooterStyles.Button = styled(Button)`
-margin:1rem;
-padding: .8rem 1.5rem;
-font-weight: 600;
-font-size: 1rem;
-`
+    margin: 1rem;
+    padding: 0.8rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+`;
 
 FooterStyles.SocialContainer = styled.div`
     display: flex;
@@ -110,9 +110,9 @@ FooterStyles.SocialContainer = styled.div`
 `;
 
 FooterStyles.Copyright = styled.div`
-padding:1rem 0;
-display: flex;
-justify-content: center;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
     p {
         font-size: 0.8rem;
     }

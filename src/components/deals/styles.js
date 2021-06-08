@@ -23,10 +23,8 @@ const Deals = {
         align-items: center;
     `,
     ImageContainer: styled.div`
-            max-width: 100%;
+        max-width: 100%;
     `
 };
-
-
 
 export default Deals;
