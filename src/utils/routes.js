@@ -18,10 +18,10 @@ export const appRoutes = [
         path: '/about-us',
         title: 'About Us',
         name: 'about-us'
+    },
+    {
+        path: '#footer',
+        title: 'Contact Us',
+        name: 'contact-us'
     }
-    // {
-    //     path: '#footer',
-    //     title: 'Contact Us',
-    //     name: 'contact-us'
-    // }
 ];

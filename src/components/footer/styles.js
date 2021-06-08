@@ -7,6 +7,7 @@ FooterStyles.Wrapper = styled.div`
     padding: 2rem 1rem;
     padding-top: 5rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(0,0,0,0.05);
 
     p {
         color: grey;
@@ -71,6 +72,7 @@ outline: none;
 width: 100%;
 font-size: 1.1rem;
 font-weight: 600;
+background-color:transparent;
 transition: all ease-in-out .3s;
 border-bottom: 2px solid rgba(0,0,0,.2) ;
 `
@@ -83,6 +85,7 @@ outline: none;
 width: 100%;
 font-size: 1.1rem;
 font-weight: 600;
+background-color:transparent;
 transition: all ease-in-out .3s;
 border-bottom: 2px solid rgba(0,0,0,.2) ;
 `
