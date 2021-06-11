@@ -29,6 +29,7 @@ const GET_COLLECTION_DATA = gql`
         ) {
             id
             name
+            slug
             images {
                 url
             }

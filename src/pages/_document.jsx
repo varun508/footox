@@ -12,7 +12,10 @@ export default class MyDocument extends Document {
     render() {
         return (
             <Html>
-                <Head>{this.props.styleTags}</Head>
+                <Head>
+                    {this.props.styleTags}
+                    <link rel="shortcut icon" href="/footox.png" />
+                </Head>
                 <link
                     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
                     rel="stylesheet"></link>

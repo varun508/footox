@@ -48,7 +48,8 @@ FooterStyles.PolicyContainer = styled.div`
 
 FooterStyles.LeftContainer = styled.div`
     display: flex;
-    padding: 1rem;
+    padding: 2rem;
+    padding-top: 0;
     flex: 1;
     gap: 1rem;
     flex-direction: column;

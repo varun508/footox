@@ -44,9 +44,13 @@ function Header() {
                                     {appRoutes.map((route, index) => {
                                         return (
                                             <HeaderStyles.NavListItems key={index}>
-                                                <Link href={route.path}>
+                                              {route.name === 'contact-us' ?
+                                                <a href={route.path}>{route.title}</a>
+                                            :
+                                              <Link href={route.path}>
                                                     <a>{route.title}</a>
-                                                </Link>
+                                                </Link>}
+                        
                                                 {(collectionType === route.name ||
                                                     route.path === router.pathname) && (
                                                     <HeaderStyles.NavPointer />

@@ -39,6 +39,7 @@ function Product(props) {
     const descriptionRef = useRef(null);
 
     const routes = useRouter();
+    console.log(routes)
     const { loading, error, data } = useQuery(GET_PRODUCT_DATA, {
         variables: { id: routes.query.id }
     });
