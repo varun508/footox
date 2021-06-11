@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Head from 'next/head';
 
 const Wrapper = styled.div`
     h2 {
@@ -20,13 +21,16 @@ const Container = styled.div`
     align-items: center;
     gap: 2rem 0;
     padding: 1rem;
+    padding-bottom: 5rem;
 `;
 
 const Image = styled.div`
     height: 550px;
     width: 50%;
+    max-height: 400px;
     img {
         height: 100%;
+        object-fit: contain;
         width: 100%;
     }
 
@@ -42,8 +46,12 @@ const Image = styled.div`
 function AboutUs() {
     return (
         <Wrapper>
+            <Head>
+                <title>About Us</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
             <Container>
-                <h2>About Us</h2>
+                <h1>About Us</h1>
                 <Image>
                     <img src="/images/about-us.png" alt="" />
                 </Image>

@@ -1,5 +1,5 @@
 import FooterStyles from './styles';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 function Footer() {
     const formRef = useRef();
@@ -33,7 +33,7 @@ function Footer() {
                 <FooterStyles.LeftContainer>
                     <div className="content">
                         <span>Email at</span>
-                        <h1>info@footox.in</h1>
+                        <h2>info@footox.in</h2>
                     </div>
                     <div className="content">
                         <span>Phone</span>
@@ -48,7 +48,7 @@ function Footer() {
                     </div>
                 </FooterStyles.LeftContainer>
                 <FooterStyles.RightContainer>
-                    <h1>Contact Us</h1>
+                    <h2>Contact Us</h2>
                     <form ref={formRef} onSubmit={handleSubmit}>
                         <FooterStyles.Input name="name" type="text" placeholder="Your name" />
                         <FooterStyles.Input name="email" type="text" placeholder="Email" />

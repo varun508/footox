@@ -5,10 +5,25 @@ import HeaderStyles from './styles';
 import { appRoutes } from '../../utils/routes';
 import HeaderMenu from '../header-menu';
 import HeaderMenuContextProvider, { HeaderMenuContext } from '../../context/header-menu-context';
+import { gql, useQuery } from '@apollo/client';
+
+const GET_LOGO = gql`
+    query {
+        logos {
+            logo {
+                url
+            }
+        }
+    }
+`;
 
 function Header() {
     const router = useRouter();
     const collectionType = router?.query?.type;
+
+    const { loading, error, data } = useQuery(GET_LOGO);
+    console.log(data?.logos[0].logo.url);
+    const url = data?.logos[0].logo.url;
 
     return (
         <HeaderMenuContextProvider>
@@ -18,7 +33,7 @@ function Header() {
                         <HeaderStyles.Container>
                             <HeaderStyles.LogoContainer>
                                 <Link href="/">
-                                    <img src="/images/logo.png" alt="" />
+                                    <img src={url} alt="" />
                                 </Link>
                             </HeaderStyles.LogoContainer>
                             <HeaderStyles.HeaderMenuContainer>

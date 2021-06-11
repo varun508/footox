@@ -62,11 +62,17 @@ FooterStyles.LeftContainer = styled.div`
 
 FooterStyles.RightContainer = styled.div`
     flex: 1;
+    padding: 2rem;
+    padding-top: 0;
+
+    > h2 {
+        margin-bottom: 20px;
+    }
 `;
 
 FooterStyles.Input = styled.input`
     padding: 10px 0;
-    margin: 10px;
+    margin-bottom: 10px;
     border: none;
     outline: none;
     width: 100%;
@@ -79,7 +85,7 @@ FooterStyles.Input = styled.input`
 
 FooterStyles.TextArea = styled.textarea`
     padding: 10px 0;
-    margin: 10px;
+    margin-bottom: 10px;
     border: none;
     outline: none;
     width: 100%;

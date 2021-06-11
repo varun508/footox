@@ -38,7 +38,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
         font-weight: 700;
         color: ${({ secondary, theme }) =>
             secondary ? theme.colorSecondary[500] : theme.textPrimary[500]};
