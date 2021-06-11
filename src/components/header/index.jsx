@@ -22,7 +22,6 @@ function Header() {
     const collectionType = router?.query?.type;
 
     const { loading, error, data } = useQuery(GET_LOGO);
-    console.log(data?.logos[0].logo.url);
     const url = data?.logos[0].logo.url;
 
     return (
@@ -44,13 +43,14 @@ function Header() {
                                     {appRoutes.map((route, index) => {
                                         return (
                                             <HeaderStyles.NavListItems key={index}>
-                                              {route.name === 'contact-us' ?
-                                                <a href={route.path}>{route.title}</a>
-                                            :
-                                              <Link href={route.path}>
-                                                    <a>{route.title}</a>
-                                                </Link>}
-                        
+                                                {route.name === 'contact-us' ? (
+                                                    <a href={route.path}>{route.title}</a>
+                                                ) : (
+                                                    <Link href={route.path}>
+                                                        <a>{route.title}</a>
+                                                    </Link>
+                                                )}
+
                                                 {(collectionType === route.name ||
                                                     route.path === router.pathname) && (
                                                     <HeaderStyles.NavPointer />

@@ -84,8 +84,6 @@ function CollectionContainer() {
     const router = useRouter();
     const collectionType = router?.query?.type ? router?.query?.type : '';
 
-    console.log(collectionType);
-
     const productsArray = useQuery(GET_PRODUCTS, { variables: { category: collectionType } });
     const productsCount = productsArray.data?.length ? productsArray.data.length : 1;
 
@@ -122,8 +120,6 @@ function CollectionContainer() {
     };
 
     const handleSorting = (selected) => {
-        console.log(selected);
-
         if (selected.value === 'all') {
             setOrderBy(null);
         } else if (selected.value === 'highToLow') {
@@ -134,13 +130,10 @@ function CollectionContainer() {
         setSelectedSorting(selected);
     };
     const handleFilter = (selected) => {
-        console.log(selected);
-
         setMinPrice(selected.value);
         setSelectedFiltering(selected);
     };
 
-    console.log(data);
     return (
         <CollectionStyles.Wrapper>
             <Head>

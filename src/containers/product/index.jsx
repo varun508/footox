@@ -39,19 +39,13 @@ function Product(props) {
     const descriptionRef = useRef(null);
 
     const routes = useRouter();
-    console.log(routes.query);
     const { loading, error, data } = useQuery(GET_PRODUCT_DATA, {
         variables: { id: routes.query.id }
     });
 
     if (error) return `Error! ${error.message}`;
-    console.log(data);
 
     const product = data?.products ? data?.products[0] : {};
-    console.log(product);
-
-    console.log(descriptionRef);
-    console.log(product?.description?.html);
 
     if (descriptionRef?.current) descriptionRef.current.innerHTML = product?.description?.html;
 
@@ -86,11 +80,11 @@ function Product(props) {
                             <div>
                                 <b>Available Colors:</b>
                                 <ProductStyles.ColorContainer>
-                                    {product?.colors?.map((color) => {
+                                    {product?.colors?.map((color, index) => {
                                         return (
                                             <ProductStyles.Color
                                                 color={color.hex}
-                                                key={color}></ProductStyles.Color>
+                                                key={index}></ProductStyles.Color>
                                         );
                                     })}
                                 </ProductStyles.ColorContainer>
@@ -98,8 +92,8 @@ function Product(props) {
                             <div>
                                 <b>Available Sizes:</b>
                                 <ProductStyles.SizeContainer>
-                                    {product?.sizes?.map((item) => {
-                                        return <p key={item}>{item}</p>;
+                                    {product?.sizes?.map((item, index) => {
+                                        return <p key={index}>{item}</p>;
                                     })}
                                 </ProductStyles.SizeContainer>
                             </div>

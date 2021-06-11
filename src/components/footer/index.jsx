@@ -21,7 +21,6 @@ function Footer() {
         fetch('https://formcarry.com/s/82pH9c778jH', requestOptions)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
                 alert(data.title + data.message);
                 formRef.current.reset();
             });

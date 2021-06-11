@@ -47,8 +47,6 @@ function HomeContainer() {
             </HomeContainerStyles.ErrorContainer>
         );
 
-    console.log(data);
-
     return (
         <HomeContainerStyles.Wrapper>
             <Head>
