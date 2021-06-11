@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const ProductCard = ({ product }) => {
     return (
-        <Link href={'/products/' + product.id}>
+        <Link href={'/' + product.id}>
             <ProductCardStyles.Wrapper>
                 <ProductCardStyles.Container>
                     <Image
