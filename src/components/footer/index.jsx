@@ -1,7 +1,24 @@
 import FooterStyles from './styles';
 import { useRef } from 'react';
+import { gql, useQuery } from '@apollo/client';
+
+const GET_FOOTER = gql`
+    query footers {
+        footers {
+            email
+            phone
+            address {
+                html
+            }
+        }
+    }
+`;
 
 function Footer() {
+    const { loading, error, data } = useQuery(GET_FOOTER);
+    console.log(data);
+    const footerData = data ? data?.footers[0] : null;
+
     const formRef = useRef();
     function handleSubmit(e) {
         e.preventDefault();
@@ -32,18 +49,18 @@ function Footer() {
                 <FooterStyles.LeftContainer>
                     <div className="content">
                         <span>Email at</span>
-                        <h2>info@footox.in</h2>
+                        <h2>{footerData?.email}</h2>
                     </div>
                     <div className="content">
                         <span>Phone</span>
-                        <p>+91 9999999999</p>
+                        <p>{footerData?.phone}</p>
                     </div>
                     <div className="content">
                         <span>Address</span>
-                        <div>
-                            <p>KH.No-53/9/1 & 12/2 Firni Road Industrial Area Mundka</p>
-                            <p>New Delhi-110041</p>
-                        </div>
+                        <div
+                            dangerouslySetInnerHTML={{
+                                __html: footerData?.address.html
+                            }}></div>
                     </div>
                 </FooterStyles.LeftContainer>
                 <FooterStyles.RightContainer>
