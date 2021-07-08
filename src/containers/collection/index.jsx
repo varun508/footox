@@ -84,8 +84,8 @@ function CollectionContainer() {
     const router = useRouter();
     const collectionType = router?.query?.type ? router?.query?.type : '';
 
-    const productsArray = useQuery(GET_PRODUCTS, { variables: { category: collectionType } });
-    const productsCount = productsArray.data?.length ? productsArray.data.length : 1;
+    const productsObj = useQuery(GET_PRODUCTS, { variables: { category: collectionType } });
+    const productsCount = productsObj.data?.products?.length ? productsObj.data.products.length : 1;
 
     // ***************************** cms ***************************************
     const { loading, error, data } = useQuery(GET_COLLECTION_DATA, {
@@ -117,6 +117,7 @@ function CollectionContainer() {
     const handlePaginationChange = (page) => {
         setSkip(page.selected * first);
         setPageNo(page.selected);
+        window.scrollTo(0, 100);
     };
 
     const handleSorting = (selected) => {

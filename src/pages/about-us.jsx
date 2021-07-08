@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
+import { gql, useQuery } from '@apollo/client';
+import { ChasingDots } from 'styled-spinkit';
 
 const Wrapper = styled.div`
+    min-height: 50vh;
     h2 {
         text-align: center;
     }
@@ -10,6 +13,14 @@ const Wrapper = styled.div`
     h3 {
         text-align: center;
     }
+`;
+
+const ErrorContainer = styled.div`
+    height: calc(100vh - 80px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 const Container = styled.div`
@@ -43,41 +54,71 @@ const Image = styled.div`
     }
 `;
 
+const Description = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+`;
+
+const GET_ABOUT = gql`
+    query abouts {
+        abouts {
+            heading
+            description {
+                html
+            }
+            image {
+                url
+            }
+        }
+    }
+`;
+
 function AboutUs() {
+    const { loading, error, data } = useQuery(GET_ABOUT);
+    console.log(data);
+    const aboutData = data ? data?.abouts[0] : null;
+    if (error)
+        return (
+            <ErrorContainer>
+                <Head>
+                    <title>Error</title>
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                </Head>
+                <h3>
+                    {`Error! ${error.message}`}
+                    <br />
+                    Retry Again
+                </h3>
+            </ErrorContainer>
+        );
+
     return (
         <Wrapper>
-            <Head>
-                <title>About Us</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            </Head>
-            <Container>
-                <h1>About Us</h1>
-                <Image>
-                    <img src="/images/about-us.png" alt="" />
-                </Image>
-                <h2>Take Your Pick From the Range of Footox Footwear Online</h2>
-                <p>
-                    Worried you might not find shoes of the right size or fit for yourself? Our
-                    detailed size guide will help you find the pair of your dreams in no time. Our
-                    15-day free returns, cash on delivery and free delivery options, secure online
-                    transactions, loyalty program and irresistible pricing are worth checking out
-                    too. So, say yes to Footox Fotwear – shop on our website today before your
-                    favourite pairs are all gone!
-                </p>
-                <p>
-                    Footox is a one-stop shop for all footwear need along with a wide assortment of
-                    shoes. The footwear options are versatile and befitting every occasion. The
-                    high-octane atmosphere in the stores, hands-on staff and the various options to
-                    choose from further makes the shopping experience an enjoyable experience.
-                </p>
-                <p>
-                    Footox nsembles are intrinsically vivacious with varied hues and styles. It
-                    celebrates the uniqueness, distinctness and individuality of the youth of today.
-                    Footox is the apt choice for those who believe in putting their best foot
-                    forward, ALWAYS! It outshines itself as a mere footwear brand and is recognized
-                    as a bold fashion statement.
-                </p>
-            </Container>
+            {loading ? (
+                <div className="dot-container">
+                    <ChasingDots />
+                    <h3>loading...</h3>
+                </div>
+            ) : (
+                <>
+                    <Head>
+                        <title>About Us</title>
+                        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                    </Head>
+                    <Container>
+                        <h1>About Us</h1>
+                        <Image>
+                            <img src={aboutData?.image?.url} alt="about-us" />
+                        </Image>
+                        <h2>{aboutData?.heading}</h2>
+                        <Description
+                            dangerouslySetInnerHTML={{
+                                __html: aboutData?.description.html
+                            }}></Description>
+                    </Container>
+                </>
+            )}
         </Wrapper>
     );
 }
