@@ -39,10 +39,11 @@ function Product(props) {
     const descriptionRef = useRef(null);
 
     const routes = useRouter();
+    const productId = routes.query.id;
     const { loading, error, data } = useQuery(GET_PRODUCT_DATA, {
-        variables: { id: routes.query.id }
+        variables: { id: productId }
     });
-    console.log('ID = ', routes.query.id);
+    console.log('ID = ', productId);
 
     if (error) return `Error! ${error.message}`;
 
@@ -57,7 +58,7 @@ function Product(props) {
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
             <ProductStyles.Container>
-                {loading ? (
+                {loading || !productId ? (
                     <div className="dot-container">
                         <ChasingDots />
                         <h3>loading...</h3>
