@@ -16,7 +16,6 @@ const GET_FOOTER = gql`
 
 function Footer() {
     const { loading, error, data } = useQuery(GET_FOOTER);
-    console.log(data);
     const footerData = data ? data?.footers[0] : null;
 
     const formRef = useRef();

@@ -40,8 +40,9 @@ function Product(props) {
 
     const routes = useRouter();
     const { loading, error, data } = useQuery(GET_PRODUCT_DATA, {
-        variables: { id: routes.query.id }
+        variables: { id: props.id }
     });
+    // console.log('ID = ', routes.query.id);
 
     if (error) return `Error! ${error.message}`;
 

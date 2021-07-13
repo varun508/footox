@@ -76,7 +76,6 @@ const GET_ABOUT = gql`
 
 function AboutUs() {
     const { loading, error, data } = useQuery(GET_ABOUT);
-    console.log(data);
     const aboutData = data ? data?.abouts[0] : null;
     if (error)
         return (
