@@ -96,12 +96,13 @@ HeaderStyles.HeaderMenuIcon = styled(BiMenu)`
     width: 40px;
     padding: 8px;
     fill: white;
+    z-index: 2;
     background: black;
     cursor: pointer;
     border-radius: 50%;
     display: none;
     @media (max-width: 600px) {
-        display: block;
+        display: ${({ open }) => (open ? 'none' : 'block')};
     }
 `;
 

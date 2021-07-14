@@ -60,7 +60,13 @@ function Header() {
                                     })}
                                 </HeaderStyles.NavList>
                             </HeaderStyles.Nav>
-                            <HeaderStyles.HeaderMenuIcon onClick={() => setOpen(!open)} />
+                            <HeaderStyles.HeaderMenuIcon
+                                open={open}
+                                onClick={() => {
+                                    console.log('clicked');
+                                    setOpen(!open);
+                                }}
+                            />
                         </HeaderStyles.Container>
                     </HeaderStyles.Wrapper>
                 )}

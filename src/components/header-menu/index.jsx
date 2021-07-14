@@ -14,13 +14,13 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    z-index: 100;
     transition: all 1s ease-in-out;
     clip-path: circle(0vh at 92% 4%);
     ${({ open }) =>
         open &&
         css`
             clip-path: circle(150% at 0% 0%);
+            z-index: ${open ? 10 : 0};
         `}
 `;
 
