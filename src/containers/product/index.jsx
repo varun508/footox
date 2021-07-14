@@ -4,7 +4,6 @@ import { gql, useQuery } from '@apollo/client';
 import { ChasingDots } from 'styled-spinkit';
 import ProductStyles from './styles';
 import MyImageGallery from './imageGallery';
-import { useRouter } from 'next/router';
 import Head from 'next/head';
 
 const GET_PRODUCT_DATA = gql`
@@ -35,15 +34,11 @@ const GET_PRODUCT_DATA = gql`
     }
 `;
 
-function Product(props) {
+function Product({ id }) {
     const descriptionRef = useRef(null);
-
-    const routes = useRouter();
-    const productId = routes.query.id;
     const { loading, error, data } = useQuery(GET_PRODUCT_DATA, {
-        variables: { id: productId }
+        variables: { id: id }
     });
-    console.log('ID = ', productId);
 
     if (error) return `Error! ${error.message}`;
 
@@ -58,7 +53,7 @@ function Product(props) {
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
             <ProductStyles.Container>
-                {loading || !productId ? (
+                {loading ? (
                     <div className="dot-container">
                         <ChasingDots />
                         <h3>loading...</h3>

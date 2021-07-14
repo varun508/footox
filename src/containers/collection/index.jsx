@@ -58,6 +58,8 @@ const GET_PRODUCTS = gql`
 `;
 
 function CollectionContainer() {
+    const router = useRouter();
+
     const [skip, setSkip] = useState(0);
     const [first, setFirst] = useState(12);
     const [orderBy, setOrderBy] = useState(null);
@@ -81,8 +83,9 @@ function CollectionContainer() {
     const [selectedSorting, setSelectedSorting] = useState(sortingOptions[0]);
     const [selectedFiltering, setSelectedFiltering] = useState(filterOptions[0]);
 
-    const router = useRouter();
     const collectionType = router?.query?.type ? router?.query?.type : '';
+
+    console.log(collectionType);
 
     const productsObj = useQuery(GET_PRODUCTS, { variables: { category: collectionType } });
     const productsCount = productsObj.data?.products?.length ? productsObj.data.products.length : 1;

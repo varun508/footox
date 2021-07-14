@@ -4,9 +4,14 @@ import { Product } from '../../containers';
 
 function ProductPage() {
     const router = useRouter();
-    const { slug } = router.query;
-    console.log('SLUG:', slug);
-    return <Product id={'ckqo2dpqom7vt0f03vnz0enc7'} />;
+
+    const productId = router.query.id;
+
+    if (!productId) {
+        return <div>Loading...</div>;
+    }
+
+    return <Product id={productId} />;
 }
 
 export default ProductPage;
