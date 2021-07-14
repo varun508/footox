@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React from 'react';
-import { Product } from '../../containers';
+import { Product } from '../containers';
 
 function ProductPage() {
     const router = useRouter();
@@ -10,6 +10,8 @@ function ProductPage() {
     if (!productId) {
         return <div>Loading...</div>;
     }
+
+    console.log(productId);
 
     return <Product id={productId} />;
 }
