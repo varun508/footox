@@ -22,7 +22,7 @@ function Header() {
     const collectionType = router?.query?.type;
 
     const { loading, error, data } = useQuery(GET_LOGO);
-    const url = data?.logos[0].logo.url;
+    const url = data?.logos[0]?.logo?.url;
 
     return (
         <HeaderMenuContextProvider>
